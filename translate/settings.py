@@ -25,7 +25,7 @@ SECRET_KEY = 'e!+0sj5$)u#^h&y7qvvm0wbnqymf+c(^m$l(w6#-or&k8s*0+*'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'online-tarjimon.herokuapp.com/']
+ALLOWED_HOSTS = ['127.0.0.1', 'dict-uz.herokuapp.com/']
 
 
 # Application definition
