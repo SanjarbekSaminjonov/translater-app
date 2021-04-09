@@ -50,7 +50,7 @@
 
             <div class="mb-3 position-relative">
                 <textarea name="entering_text" class="form-control" id="output" value="" rows="8"
-                    placeholder="Matn kiriting" style="font-size: larger;">{{result.origin}}</textarea>
+                    placeholder="Matn kiriting" style="font-size: larger; outline: none;">{{result.origin}}</textarea>
                 <button type="button" class="btn btn-secondary position-absolute top-0 end-0" data-bs-toggle="tooltip"
                     data-bs-placement="bottom" title="Clear Text" onclick="Clear()"
                     style="margin: 5px 5px 0 0; width: 50px; height: 30px; padding: 1px;">Clear</button>
@@ -135,7 +135,7 @@
                 <div class="position-relative">
 
                     <textarea class="form-control" id="myInput" name="result" rows="8"
-                        style="margin-top: 8px; font-size: larger;" placeholder="Tarjima"
+                        style="margin-top: 8px; font-size: larger; outline: none;" placeholder="Tarjima"
                         readonly>{{result.text}}</textarea>
                     <button type="button" class="btn btn-secondary position-absolute top-0 end-0"
                         data-bs-toggle="tooltip" data-bs-placement="bottom" title="Copy to clipboard" onclick="Copy()"
