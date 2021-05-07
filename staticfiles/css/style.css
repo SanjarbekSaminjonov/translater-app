@@ -1,0 +1,37 @@
+.logo {
+    font-size: 26px;
+    font-family: algerian;
+}
+
+.entering_text, .exit_text {
+    font-size: larger;
+}
+
+.mb-3 {
+    margin-top: 15px;
+}
+
+.btn1 {
+    margin: 5px 5px 0 0; 
+    width: 40px; 
+    height: 25px; 
+    padding: 2px;
+    font-size: smaller;
+}
+
+.lang {
+    width: 25%;
+    display: inline;
+}
+
+.img {
+    width: 45px; 
+    height: 30px; 
+    padding: 0px 10px 0px;
+}
+
+.bott {
+    height: 60px;
+    padding-top: 12px;
+    text-align: center;
+}

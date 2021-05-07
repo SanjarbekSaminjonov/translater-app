@@ -1,170 +1,111 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-        crossorigin="anonymous"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.js' %}"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-    <link rel="icon" type="image/png" href="https://cdn0.iconfinder.com/data/icons/tuts/256/google_translate.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <link rel="shortcut icon" href="{% static 'images/google_translate.png' %}" type="image/png">
     <title>Online tarjimon</title>
 </head>
 
 <body>
 
-    <!-- Yuqori qism navbar -->
 
+    <!-- Navbar section -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a style="font-size: 24px; font-family: algerian;" class="navbar-brand" href="{% url 'index' %}">Online
-                tarjimon</a>
+            <a class="navbar-brand logo" href="#">ONLINE TARJIMON</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Bosh sahifa</a>
-                    <a class="nav-link" href="http://t.me/Sanjarbek_Saminjonov" target="_blank">Telegram kanalimiz</a>
-                    <a class="nav-link" href="http://t.me/SanjarbekDev" target="_blank">Bog'lanish</a>
+                    <a class="nav-link active" aria-current="page" href="#">Asosiy sahifa</a>
+                    <a class="nav-link" href="https://myurls.co/sanjarbeksaminjonov">Biz bilan bog'lanish</a>
+                    <a class="nav-link" href="https://t.me/Sanjarbek_Saminjonov">Telegram kanalimiz</a>
                 </div>
             </div>
         </div>
     </nav>
-    <br>
+    <!-- /Navbar section -->
 
 
-    <!-- Asosiy qism boshlanishi -->
-
+    <!-- Main section -->
     <div class="container-md">
-        <form class="" action="{% url 'index' %}" method="POST">
 
-
+        <form id="post-form">
             {% csrf_token %}
 
-
+            <!-- Input section -->
             <div class="mb-3 position-relative">
-                <textarea name="entering_text" class="form-control" id="output" value="" rows="8"
-                    placeholder="Matn kiriting" style="font-size: larger; outline: none;">{{result.origin}}</textarea>
-                <button type="button" class="btn btn-secondary position-absolute top-0 end-0" data-bs-toggle="tooltip"
-                    data-bs-placement="bottom" title="Clear Text" onclick="Clear()"
-                    style="margin: 5px 5px 0 0; width: 50px; height: 30px; padding: 1px;">Clear</button>
+                <textarea name="entering_text" class="form-control entering_text" id="entering_text" value="" rows="8"
+                    placeholder="Matn kiriting"></textarea>
+                <button type="button" class="btn btn1 btn-secondary position-absolute top-0 end-0"
+                    data-bs-toggle="tooltip" data-bs-placement="bottom" title="Clear Text" onclick="Clear()">
+                    Clear
+                </button>
             </div>
+            <!-- /Input section -->
 
-            <div class="mb-3">
+            <!-- Select lang section -->
+            <center>
+                <select name="lang_enter" id="lang_enter" class="lang form-select rounded">
+                    <option value="auto">Avtomatik aniqlash</option>
+                    <option value="en">English</option>
+                    <option value="ru">Russian</option>
+                    <option value="uz">Uzbek</option>
+                </select>
 
-                <!-- Tillarni tanlash -->
-                <center>
-                    <label class="form-label">
+                <img class="img-fluid img" src="{% static 'images/picture.png' %}" alt="<<>>" />
 
-                        <div class="input-group">
-                            <select name="src" class="form-select rounded" aria-label="Default select example">
+                <select name="lang_exit" id="lang_exit" class="lang form-select rounded">
+                    <option value="auto">Tilni tanlang</option>
+                    <option value="en">English</option>
+                    <option value="ru">Russian</option>
+                    <option value="uz">Uzbek</option>
+                </select>
 
-                                {% if src == '' %}
-                                <option selected value="">Avtomatik aniqlash</option>
-                                {% else %}
-                                <option value="">Avtomatik aniqlash</option>
-                                {% endif %}
+                <button type="submit" class="btn2 btn btn-primary" title="Tarjima qilish">Tarjima</button>
+            </center>
+            <!-- /Select lang section -->
 
-                                {% if src == 'uz' %}
-                                <option selected value="uz">Uzbek</option>
-                                {% else %}
-                                <option value="uz">Uzbek</option>
-                                {% endif %}
-
-                                {% if src == 'en' %}
-                                <option selected value="en">English</option>
-                                {% else %}
-                                <option value="en">English</option>
-                                {% endif %}
-
-                                {% if result.src == 'ru' %}
-                                <option selected value="ru">Russian</option>
-                                {% else %}
-                                <option value="ru">Russian</option>
-                                {% endif %}
-
-                            </select>
-
-                            <img class="img-fluid" style="width: 40px; height: 30px; padding: 8px 10px 0px 10px"
-                                src="https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/DoubleArrowLeftRight-256.png"
-                                alt="...">
-
-                            <select name="dest" class="form-select rounded" id="inputGroupSelect04"
-                                aria-label="Example select with button addon">
-
-                                {% if result.dest == '' %}
-                                <option selected value="">Tilni tanlang</option>
-                                {% else %}
-                                <option value="">Tilni tanlang</option>
-                                {% endif %}
-
-                                {% if result.dest == 'uz' %}
-                                <option selected value="uz">Uzbek</option>
-                                {% else %}
-                                <option value="uz">Uzbek</option>
-                                {% endif %}
-
-                                {% if result.dest == 'en' %}
-                                <option selected value="en">English</option>
-                                {% else %}
-                                <option value="en">English</option>
-                                {% endif %}
-
-                                {% if result.dest == 'ru' %}
-                                <option selected value="ru">Russian</option>
-                                {% else %}
-                                <option value="ru">Russian</option>
-                                {% endif %}
-
-                            </select>
-                            <button class="btn btn-primary rounded" style="margin-left: 10px;"
-                                type="submit">Tarjima</button>
-                        </div>
-
-                    </label>
-                </center>
-
-                <!-- Natija -->
-
-                <div class="position-relative">
-
-                    <textarea class="form-control" id="myInput" name="result" rows="8"
-                        style="margin-top: 8px; font-size: larger; outline: none;" placeholder="Tarjima"
-                        readonly>{{result.text}}</textarea>
-                    <button type="button" class="btn btn-secondary position-absolute top-0 end-0"
-                        data-bs-toggle="tooltip" data-bs-placement="bottom" title="Copy to clipboard" onclick="Copy()"
-                        style="margin: 5px 5px 0 0; width: 50px; height: 30px; padding: 1px;">Copy</button>
-
-                </div>
-
-            </div>
         </form>
-
+        
+        <div class="mb-3 position-relative">
+            <textarea name="exit_text" class="form-control exit_text" id="exit_text" value="" rows="8"
+                placeholder="Tarjima" readonly></textarea>
+            <button type="button" class="btn btn1 btn-secondary position-absolute top-0 end-0" data-bs-toggle="tooltip"
+                data-bs-placement="bottom" title="Copy Text" onclick="Copy()">Copy</button>
+        </div>
     </div>
+    <!-- /Main section -->
 
-    <script>
-        function Copy() {
-            var copyText = document.getElementById('myInput')
-            copyText.select();
-            document.execCommand('copy')
-        }
+    <!-- Footer section -->
+    <div class="card-footer text-muted bott">
+        Saminjonov Sanjarbek &copy; 2021
+    </div>
+    <!-- /Footer section -->
 
-        function Clear() {
-            document.getElementById("output").value = "";
-        }
-        $("#myInput").each(function () {
+    <!-- <script>
+        $("#exit_text").each(function () {
             this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
         }).on("input", function () {
             this.style.height = "auto";
             this.style.height = (this.scrollHeight) + "px";
         });
-    </script>
+    </script> -->
+
 
 
 </body>

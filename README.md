@@ -1,2 +1,0 @@
-# translate
-Online tarjimon
