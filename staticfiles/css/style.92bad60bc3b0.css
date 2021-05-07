@@ -4,8 +4,8 @@
 }
 
 .navbar {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .container-md, .container {
@@ -48,8 +48,4 @@
 
 select option {
     font-size: smaller;
-}
-
-.btn2 {
-    margin-left: 10px;
 }

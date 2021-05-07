@@ -4,8 +4,8 @@
 }
 
 .navbar {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .container-md, .container {
@@ -29,6 +29,7 @@
 }
 
 .lang {
+    max-width: 100px;
     width: 25%;
     display: inline;
 }
@@ -47,4 +48,8 @@
 
 select option {
     font-size: smaller;
+}
+
+.btn2 {
+    margin-left: 10px;
 }
