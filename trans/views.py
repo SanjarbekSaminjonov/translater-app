@@ -5,17 +5,19 @@ from googletrans import Translator
 translater = Translator()
 
 def translate(text, src, dest):
+    try:
+        if text == '':
+            return ''
+        
+        if dest == 'auto':
+                dest = 'en'
 
-    if text == '':
-        return ''
-    
-    if dest == 'auto':
-            dest = 'en'
+        if src == 'auto':
+            return translater.translate(text, dest=dest).text
 
-    if src == 'auto':
-        return translater.translate(text, dest=dest).text
-
-    return translater.translate(text, src=src, dest=dest).text
+        return translater.translate(text, src=src, dest=dest).text
+    except:
+        translate(text, src, dest)
 
 # Create your views here.
 
