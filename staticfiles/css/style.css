@@ -1,6 +1,15 @@
 .logo {
-    font-size: 26px;
+    font-size: 24 px;
     font-family: algerian;
+}
+
+.navbar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.container-md, .container {
+    max-width: 1000px;
 }
 
 .entering_text, .exit_text {
@@ -32,6 +41,10 @@
 
 .bott {
     height: 60px;
-    padding-top: 12px;
+    padding-top: 15px;
     text-align: center;
+}
+
+select option {
+    font-size: smaller;
 }
