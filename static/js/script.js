@@ -26,3 +26,14 @@ function Copy() {
   copyText.select();
   document.execCommand("copy");
 }
+
+function Change() {
+  var src = document.getElementById("lang_enter").value;
+  document.getElementById("lang_enter").value = document.getElementById("lang_exit").value;
+  document.getElementById("lang_exit").value = src;
+
+  // var text = document.getElementById("lang_enter").text;
+  
+  // console.log(document.getElementById("lang_enter").value);
+  // console.log(document.getElementById("lang_exit").value);
+}

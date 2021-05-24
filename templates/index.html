@@ -20,7 +20,6 @@
 
 <body>
 
-
     <!-- Navbar section -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
@@ -40,7 +39,6 @@
     </nav>
     <!-- /Navbar section -->
 
-
     <!-- Main section -->
     <div class="container-md">
 
@@ -58,27 +56,34 @@
             </div>
             <!-- /Input section -->
 
-            <!-- Select lang section -->
+            <!-- Select language section -->
             <center>
                 <select name="lang_enter" id="lang_enter" class="lang form-select rounded">
-                    <option value="auto">auto</option>
-                    <option value="uz">uz</option>
-                    <option value="en">en</option>
-                    <option value="ru">ru</option>
+                    <option value="auto" selected>Avtomatik aniqlansin</option>
+
+                    {% for key, value in languages.items %}
+                    <option value="{{ key }}">{{ value.title }}</option>
+                    {% endfor %}
+
                 </select>
 
-                <img class="img-fluid img" src="{% static 'images/picture.png' %}" alt="<<>>" />
+                <button class='btn3' onclick='Change()'>
+                    <img class="img-fluid img"
+                    src="{% static 'images/picture.png' %}" alt="<<>>">
+                </button>
 
                 <select name="lang_exit" id="lang_exit" class="lang form-select rounded">
-                    <!-- <option value="auto">Tilni tanlang</option> -->
-                    <option value="uz">uz</option>
-                    <option value="en">en</option>
-                    <option value="ru">ru</option>
+                    <option value="auto" selected>Tilni tanlang</option>
+
+                    {% for key, value in languages.items %}
+                    <option value="{{ key }}">{{ value.title }}</option>
+                    {% endfor %}
+
                 </select>
 
                 <button type="submit" class="btn2 btn btn-primary" title="Tarjima qilish">Tarjima</button>
             </center>
-            <!-- /Select lang section -->
+            <!-- /Select language section -->
 
         </form>
         
@@ -95,16 +100,17 @@
     <div class="card-footer text-muted bott">
         Saminjonov Sanjarbek &copy; 2021
     </div>
+
     <!-- /Footer section -->
 
-    <!-- <script>
-        $("#exit_text").each(function () {
+    <script>
+        $("#entering_text").each(function () {
             this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
         }).on("input", function () {
             this.style.height = "auto";
             this.style.height = (this.scrollHeight) + "px";
         });
-    </script> -->
+    </script>
 
 
 
