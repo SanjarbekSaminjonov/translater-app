@@ -59,7 +59,7 @@
             <!-- Select language section -->
             <center>
                 <select name="lang_enter" id="lang_enter" class="lang form-select rounded">
-                    <option value="auto" selected>Avtomatik aniqlansin</option>
+                    <option value="auto" selected>Auto</option>
 
                     {% for key, value in languages.items %}
                     <option value="{{ key }}">{{ value.title }}</option>
@@ -67,18 +67,20 @@
 
                 </select>
 
-                <button class='btn3' onclick='Change()'>
+                <button type="button" class='btn2 btn btn-primary' onclick='Change()'>
                     <img class="img-fluid img"
                     src="{% static 'images/picture.png' %}" alt="<<>>">
                 </button>
 
                 <select name="lang_exit" id="lang_exit" class="lang form-select rounded">
-                    <option value="auto" selected>Tilni tanlang</option>
-
+                    <option value="auto">Tilni tanlang</option>
                     {% for key, value in languages.items %}
-                    <option value="{{ key }}">{{ value.title }}</option>
+                        {% if key == 'uz' %}
+                        <option value="{{ key }}" selected>{{ value.title }}</option>
+                        {% else %}
+                        <option value="{{ key }}">{{ value.title }}</option>
+                        {% endif %}
                     {% endfor %}
-
                 </select>
 
                 <button type="submit" class="btn2 btn btn-primary" title="Tarjima qilish">Tarjima</button>
@@ -100,7 +102,6 @@
     <div class="card-footer text-muted bott">
         Saminjonov Sanjarbek &copy; 2021
     </div>
-
     <!-- /Footer section -->
 
     <script>
@@ -110,9 +111,14 @@
             this.style.height = "auto";
             this.style.height = (this.scrollHeight) + "px";
         });
+
+        $("#exit_text").each(function () {
+            this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
+        }).on("input", function () {
+            this.style.height = "auto";
+            this.style.height = (this.scrollHeight) + "px";
+        });
     </script>
-
-
 
 </body>
 

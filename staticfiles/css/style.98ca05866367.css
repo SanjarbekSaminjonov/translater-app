@@ -1,0 +1,65 @@
+.logo {
+    font-size: 24 px;
+    font-family: algerian;
+}
+
+.navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.container-md, .container {
+    max-width: 800px;
+}
+
+.entering_text, .exit_text {
+    font-size: larger;
+}
+
+.mb-3 {
+    margin-top: 15px;
+}
+
+.btn1 {
+    margin: 5px 5px 0 0; 
+    width: 40px; 
+    height: 25px; 
+    padding: 2px;
+    font-size: smaller;
+}
+
+.lang {
+    width: 30%;
+    display: inline-block;
+}
+
+.img {
+    width: 20%px; 
+    height: 25px; 
+}
+
+.bott {
+    height: 15vh;
+    width: 100%;
+    padding-top: 30px;
+    text-align: center;
+}
+
+select option {
+    font-size: 12px;
+}
+
+.btn2 {
+    margin-left: 10px;
+    font-size: 12px;
+    background-color: #fff;
+    color: #222;
+    border-color: #222;
+    font-weight: bolder;
+}
+
+.btn3 {
+    border: 1px solid #fff;
+    background-color: #fff;
+}
