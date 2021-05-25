@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from googletrans import Translator
+from .models import History
 
 languages = {
     'af': 'afrikaans',
@@ -140,6 +141,9 @@ def trans(request):
 
         result = translate(text=text, src=src, dest=dest)
 
+        history = History(orign_text=text, src=src, dest=dest, translated_text=result)
+        history.save()
+        
         return HttpResponse(result)
     return HttpResponse(result)
         
