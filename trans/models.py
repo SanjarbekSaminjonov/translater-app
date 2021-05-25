@@ -7,9 +7,7 @@ class History(models.Model):
     src = models.CharField(max_length=10)
     dest = models.CharField(max_length=10)
     translated_text = models.TextField()
+    translated_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        title = self.orginal_text.split()[:2] + "... - "
-        title += self.translated_text.split()[:2] + "..."
-        title += "( from" + self.src + " to " + self.dest + ")"
-        return title
+        return self.orginal_text.split()[0] + "... - " + self.translated_text.split()[0] + "..." + "(from" + self.src + " to " + self.dest + ")"
