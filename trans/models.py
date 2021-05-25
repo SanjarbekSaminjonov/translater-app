@@ -9,7 +9,7 @@ class History(models.Model):
     translated_text = models.TextField()
 
     def __str__(self):
-        title = self.orign_text.split()[:2] + "... - "
+        title = self.orginal_text.split()[:2] + "... - "
         title += self.translated_text.split()[:2] + "..."
         title += "( from" + self.src + " to " + self.dest + ")"
         return title
