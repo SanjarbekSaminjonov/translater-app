@@ -141,9 +141,9 @@ def trans(request):
 
         result = translate(text=text, src=src, dest=dest)
 
-        history = History(orign_text=text, src=src, dest=dest, translated_text=result)
+        history = History(orginal_text=text, src=src, dest=dest, translated_text=result)
         history.save()
-        
+
         return HttpResponse(result)
     return HttpResponse(result)
         
