@@ -29,6 +29,14 @@
     font-size: smaller;
 }
 
+.btn12 {
+    margin: 35px 5px 0 0; 
+    width: 40px; 
+    height: 25px; 
+    padding: 2px;
+    font-size: smaller;
+}
+
 .lang {
     width: 30%;
     display: inline-block;
@@ -51,7 +59,7 @@ select option {
 }
 
 .btn2 {
-    height: 37px;
+    height: 38px;
     font-size: 12px;
     background-color: #fff;
     color: #222;

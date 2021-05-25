@@ -115,7 +115,6 @@ languages = {
 translater = Translator()
 
 def translate(text, src, dest):
-    print(text, src, dest)
     try:
         if text == '' or dest == 'auto':
             return ''

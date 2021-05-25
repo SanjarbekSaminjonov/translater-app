@@ -24,6 +24,7 @@ function Clear() {
 function Copy() {
     var copyText = document.getElementById("exit_text");
     copyText.select();
+    document.getElementById("exit_text").value = "";
     document.execCommand("copy");
 }
 
@@ -33,7 +34,7 @@ function Change() {
     document.getElementById("lang_exit").value = src;
 }
 
-function Paste() {
+function myFunction() {
     navigator.clipboard.readText()
         .then(text => {
             document.getElementById("entering_text").innerHTML = text;

@@ -41,7 +41,6 @@
 
     <!-- Main section -->
     <div class="container-md">
-
         <form id="post-form">
             {% csrf_token %}
 
@@ -53,6 +52,10 @@
                     data-bs-toggle="tooltip" data-bs-placement="bottom" title="Clear Text" onclick="Clear()">
                     Clear
                 </button>
+                <!-- <button type="button" class="btn btn12 btn-secondary position-absolute top-0 end-0"
+                    data-bs-toggle="tooltip" data-bs-placement="bottom" title="Paste Text" onclick="Paste()">
+                    Paste
+                </button> -->
             </div>
             <!-- /Input section -->
 
@@ -68,18 +71,17 @@
                 </select>
 
                 <button type="button" class='btn2 btn btn-primary' onclick='Change()'>
-                    <img class="img-fluid img"
-                    src="{% static 'images/picture.png' %}" alt="<<>>">
+                    <img class="img-fluid img" src="{% static 'images/picture.png' %}" alt="<<>>">
                 </button>
 
                 <select name="lang_exit" id="lang_exit" class="lang form-select rounded">
                     <option value="auto">Tilni tanlang</option>
                     {% for key, value in languages.items %}
-                        {% if key == 'uz' %}
-                        <option value="{{ key }}" selected>{{ value.title }}</option>
-                        {% else %}
-                        <option value="{{ key }}">{{ value.title }}</option>
-                        {% endif %}
+                    {% if key == 'uz' %}
+                    <option value="{{ key }}" selected>{{ value.title }}</option>
+                    {% else %}
+                    <option value="{{ key }}">{{ value.title }}</option>
+                    {% endif %}
                     {% endfor %}
                 </select>
 
@@ -88,7 +90,7 @@
             <!-- /Select language section -->
 
         </form>
-        
+
         <div class="mb-3 position-relative">
             <textarea name="exit_text" class="form-control exit_text" id="exit_text" value="" rows="8"
                 placeholder="Tarjima" readonly></textarea>
@@ -103,22 +105,6 @@
         Saminjonov Sanjarbek &copy; 2021
     </div>
     <!-- /Footer section -->
-
-    <script>
-        $("#entering_text").each(function () {
-            this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
-        }).on("input", function () {
-            this.style.height = "auto";
-            this.style.height = (this.scrollHeight) + "px";
-        });
-
-        $("#exit_text").each(function () {
-            this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
-        }).on("input", function () {
-            this.style.height = "auto";
-            this.style.height = (this.scrollHeight) + "px";
-        });
-    </script>
 
 </body>
 

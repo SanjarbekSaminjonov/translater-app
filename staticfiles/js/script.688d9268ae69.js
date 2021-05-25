@@ -33,12 +33,7 @@ function Change() {
     document.getElementById("lang_exit").value = src;
 }
 
-function Paste() {
+function myFunction() {
     navigator.clipboard.readText()
-        .then(text => {
-            document.getElementById("entering_text").innerHTML = text;
-        })
-        .catch(err => {
-            document.getElementById("entering_text").innerHTML = 'Failed to read clipboard contents: ' + err;
-        });
+    document.getElementById("entering_text").innerHTML = text;
 }
