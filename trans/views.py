@@ -112,8 +112,9 @@ languages = {
     'yo': 'yoruba',
     'zu': 'zulu'
 }
-    
+
 translater = Translator()
+
 
 def translate(text, src, dest):
     try:
@@ -128,6 +129,7 @@ def translate(text, src, dest):
 
 # Create your views here.
 
+
 def index(request):
     return render(request, 'index.html', {'languages': languages})
 
@@ -141,9 +143,9 @@ def trans(request):
 
         result = translate(text=text, src=src, dest=dest)
 
-        history = History(orign_text=text, src=src, dest=dest, translated_text=result)
+        history = History(
+            orign_text=text, src=languages[src], dest=languages[dest], translated_text=result)
         history.save()
 
         return HttpResponse(result)
     return HttpResponse(result)
-        

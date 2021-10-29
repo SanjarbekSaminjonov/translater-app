@@ -1,6 +1,6 @@
+<!DOCTYPE html>
 {% load static %}
 
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,10 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <script src="{% static 'bootstrap/js/bootstrap.bundle.js' %}"></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="{% static 'js/script.js' %}"></script>
 
     <link rel="shortcut icon" href="{% static 'images/google_translate.png' %}" type="image/png">
     <title>Online tarjimon</title>
@@ -23,16 +19,16 @@
     <!-- Navbar section -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a class="navbar-brand logo" href="#">ONLINE TARJIMON</a>
+            <a class="navbar-brand logo" href="/">ONLINE TARJIMON</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Asosiy sahifa</a>
-                    <a class="nav-link" href="https://myurls.co/sanjarbeksaminjonov">Biz bilan bog'lanish</a>
-                    <a class="nav-link" href="https://t.me/Sanjarbek_Saminjonov">Telegram kanalimiz</a>
+                    <a class="nav-link active" aria-current="page" href="/">Asosiy sahifa</a>
+                    <a class="nav-link" target="_blank" href="https://myurls.co/sanjarbeksaminjonov">Biz bilan
+                        bog'lanish</a>
                 </div>
             </div>
         </div>
@@ -46,16 +42,12 @@
 
             <!-- Input section -->
             <div class="mb-3 position-relative">
-                <textarea name="entering_text" class="form-control entering_text" id="entering_text" value="" rows="2"
+                <textarea name="entering_text" class="form-control entering_text" id="entering_text" value="" rows="6"
                     placeholder="Matn kiriting"></textarea>
                 <button type="button" class="btn btn1 btn-secondary position-absolute top-0 end-0"
                     data-bs-toggle="tooltip" data-bs-placement="bottom" title="Clear Text" onclick="Clear()">
                     Clear
                 </button>
-                <!-- <button type="button" class="btn btn12 btn-secondary position-absolute top-0 end-0"
-                    data-bs-toggle="tooltip" data-bs-placement="bottom" title="Paste Text" onclick="Paste()">
-                    Paste
-                </button> -->
             </div>
             <!-- /Input section -->
 
@@ -92,7 +84,7 @@
         </form>
 
         <div class="mb-3 position-relative">
-            <textarea name="exit_text" class="form-control exit_text" id="exit_text" value="" rows="2"
+            <textarea name="exit_text" class="form-control exit_text" id="exit_text" value="" rows="6"
                 placeholder="Tarjima" readonly></textarea>
             <button type="button" class="btn btn1 btn-secondary position-absolute top-0 end-0" data-bs-toggle="tooltip"
                 data-bs-placement="bottom" title="Copy Text" onclick="Copy()">Copy</button>
@@ -100,12 +92,20 @@
     </div>
     <!-- /Main section -->
 
+
     <!-- Footer section -->
     <div class="card-footer text-muted bott">
         Saminjonov Sanjarbek &copy; 2021
     </div>
     <!-- /Footer section -->
 
+
+    <!-- Scripts -->
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.js' %}"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <!-- /Scripts -->
 </body>
 
 </html>

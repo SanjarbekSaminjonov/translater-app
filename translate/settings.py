@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-# import django_heroku
-# import dj_database_url
+import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +26,6 @@ SECRET_KEY = 'django-insecure-zji9@j+=lz+^9#cs3rz-p0&sleg^r#89!^lt-5-ja#gv4@p*8(
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-# DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -78,8 +77,21 @@ WSGI_APPLICATION = 'translate.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': dj_database_url.config()
+# }
+
+# django_heroku.settings(locals())
+
 DATABASES = {
-    'default': dj_database_url.config()
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'translate',
+        'USER': 'postgres',
+        'PASSWORD': 'Abc.1234',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
 }
 
 
@@ -107,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC+5'
+TIME_ZONE = 'Asia/Tashkent'
 
 USE_I18N = True
 
@@ -131,5 +143,3 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-django_heroku.settings(locals())
