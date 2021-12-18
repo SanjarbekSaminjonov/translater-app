@@ -1,7 +1,7 @@
 # translate
 
 Online tarjimon
-https://dict-uz.herokuapp.com/
+https://online-tarjimon.herokuapp.com/
 
 It was built on Django
 
